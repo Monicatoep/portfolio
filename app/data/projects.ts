@@ -14,11 +14,11 @@ export const projects: ProjectEntry[] = [
     technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
   },
   {
-    title: "Pharmacy Tool",
+    title: "Pharmacy Tool - Regnedimsen",
     description:
-      "An internal tool built for Apopro Online Pharmacy to automate daily calculations and streamline repetitive workflows. The tool replaced manual spreadsheet work and reduced errors significantly. It was my first real development project and the experience that convinced me to pursue a career in software development.",
-    image: "/projects/pharmacy-tool.jpg",
-    technologies: ["C#", ".NET", "SQL", "REST API"],
+      "This is the new and improved version of the internal tool I first built for Apopro Online Pharmacy, which was the project that originally sparked my interest in coding and led me into software development. It automates daily calculations and repetitive workflows, replacing manual work and helping reduce errors.",
+    image: "/regnedimsen.png",
+    technologies: ["React", "TypeScript", "Tailwind CSS"],
   },
   {
     title: "Byens Bager – Internal Ordering System",
