@@ -35,7 +35,7 @@ export const experience: ExperienceEntry[] = [
     organization: "Several pharmacies",
     description:
       "10+ years of experience from various pharmacies. Most recently, I worked at Apopro Online Pharmacy, where I handled a range of pharmacy technician tasks, produced SEO material, and provided online support.",
-    startDate: "2014-09",
+    startDate: "2011-09",
     endDate: "2023-09",
     technologies: ["PharmaNet", "Cito"],
   },
@@ -45,8 +45,8 @@ export const experience: ExperienceEntry[] = [
     organization: "Pharmakon",
     description:
       "Training in clinical pharmacy, advising on medicines, self-care, health services, quality assurance, etc.",
-    startDate: "2014-09",
-    endDate: "2017-06",
+    startDate: "2011-09",
+    endDate: "2014-06",
     technologies: ["Pharmanet", "Cito"],
   },
 ];
