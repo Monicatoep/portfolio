@@ -1,3 +1,7 @@
+"use client";
+
+import { useState, useEffect } from "react";
+
 const navItems = [
   { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
@@ -5,12 +9,32 @@ const navItems = [
 ];
 
 export default function Topbar() {
+  const [visible, setVisible] = useState(true);
+  const [scrolled, setScrolled] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    function handleScroll() {
+      const currentScrollY = window.scrollY;
+      setVisible(currentScrollY < lastScrollY || currentScrollY < 10);
+      setScrolled(currentScrollY > 10);
+      setLastScrollY(currentScrollY);
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
   return (
-    <nav className="sticky top-0 z-50 border-b border-secondary/30 bg-background/80 backdrop-blur">
-      <div className="mx-auto flex h-14 max-w-3xl items-center justify-between px-6">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        visible ? "translate-y-0" : "-translate-y-full"
+      } ${scrolled ? "bg-background" : ""}`}
+    >
+      <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-6">
         <a
           href="#"
-          className="text-lg font-semibold tracking-tight text-foreground"
+          className="text-2xl font-semibold tracking-tight text-dark"
         >
           Portfolio
         </a>
@@ -19,7 +43,7 @@ export default function Topbar() {
             <li key={href}>
               <a
                 href={href}
-                className="text-sm font-medium text-secondary transition-colors hover:text-accent"
+                className="text-lg font-medium text-dark transition-colors hover:text-accent"
               >
                 {label}
               </a>
