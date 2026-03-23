@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 const navItems = [
   { label: "About", href: "#about" },
@@ -32,11 +33,9 @@ export default function Topbar() {
       } ${scrolled ? "bg-background" : ""}`}
     >
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-6">
-        <a
-          href="#"
-          className="text-2xl font-semibold tracking-tight text-dark"
-        >
-          Portfolio
+        <a href="#">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo.svg" alt="MF logo" width={100} height={34} />
         </a>
         <ul className="flex gap-6">
           {navItems.map(({ label, href }) => (

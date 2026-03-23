@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" fill="none">
+  <!-- Stem growing from between the letters -->
+  <path d="M60 38 Q60 20 60 12" stroke="#32161F" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+  <!-- Left leaf -->
+  <path d="M60 18 Q52 10 48 4 Q54 8 60 14" fill="#32161F"/>
+  <!-- Right leaf -->
+  <path d="M60 14 Q68 6 72 0 Q66 6 60 10" fill="#32161F"/>
+  <!-- Small left leaf lower -->
+  <path d="M60 26 Q54 20 50 16 Q56 19 60 23" fill="#32161F"/>
+  <!-- Small right leaf lower -->
+  <path d="M60 23 Q66 17 69 13 Q64 18 60 20" fill="#32161F"/>
+  <!-- M -->
+  <text x="16" y="32" font-family="Georgia, serif" font-size="26" font-weight="700" fill="#32161F" letter-spacing="-1">M</text>
+  <!-- F -->
+  <text x="80" y="32" font-family="Georgia, serif" font-size="26" font-weight="700" fill="#32161F" letter-spacing="-1">F</text>
+</svg>
