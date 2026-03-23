@@ -20,6 +20,7 @@ export default function ProjectCard({
           src={project.image}
           alt={project.title}
           fill
+          sizes="(max-width: 640px) 100vw, 36rem"
           className="rounded-lg object-contain"
         />
       </div>
@@ -35,6 +36,16 @@ export default function ProjectCard({
         <div className="mt-4">
           <TechList technologies={project.technologies} />
         </div>
+        {project.link && (
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-block rounded-full bg-dark px-5 py-2 text-sm font-medium text-foreground transition-opacity hover:opacity-80"
+          >
+            View Project
+          </a>
+        )}
       </div>
     </div>
   );

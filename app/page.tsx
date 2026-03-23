@@ -28,7 +28,7 @@ export default function Home() {
             alt="Monica Frank"
             width={280}
             height={280}
-            className="rounded-full object-cover"
+            className="h-auto w-auto rounded-full object-cover"
             priority
           />
         </div>
@@ -41,7 +41,7 @@ export default function Home() {
             <h1 className="text-3xl font-semibold tracking-tight text-dark">
               About
             </h1>
-            <hr className="flex-1 border-t border-dark" />
+            <hr className="flex-1 border-t-2 border-dark" />
           </div>
           <div className="mt-4 flex flex-col gap-4 leading-relaxed text-foreground/80">
             <p>
@@ -65,7 +65,7 @@ export default function Home() {
             <h1 className="text-3xl font-semibold tracking-tight text-dark">
               Experience
             </h1>
-            <hr className="flex-1 border-t border-dark" />
+            <hr className="flex-1 border-t-2 border-dark" />
           </div>
 
           <div className="mt-10">
@@ -102,7 +102,7 @@ export default function Home() {
             <h1 className="text-3xl font-semibold tracking-tight text-dark">
               Projects
             </h1>
-            <hr className="flex-1 border-t border-dark" />
+            <hr className="flex-1 border-t-2 border-dark" />
           </div>
           <div className="mt-8 flex flex-col gap-8">
             {projects.map((project, i) => (

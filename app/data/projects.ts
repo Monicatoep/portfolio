@@ -3,6 +3,7 @@ export interface ProjectEntry {
   description: string;
   image: string;
   technologies: string[];
+  link?: string;
 }
 
 export const projects: ProjectEntry[] = [
@@ -12,6 +13,7 @@ export const projects: ProjectEntry[] = [
       "This is the new and improved version of the internal tool I first built for Apopro Online Pharmacy, which was the project that originally sparked my interest in coding and led me into software development. It automates daily calculations and repetitive workflows, replacing manual work and helping reduce errors.",
     image: "/regnedimsen.png",
     technologies: ["React", "TypeScript", "Tailwind CSS"],
+    link: "https://apo.monori.dk/",
   },
   {
     title: "Portfolio Website",
