@@ -15,7 +15,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Monica Frank | Developer",
+  icons: {
+    icon: "/favicon.svg",
+  },
+  title: "Monica Frank | Full-Stack Developer Portfolio",
   description:
     "Newly graduated full-stack developer with experience in React, Next.js, TypeScript, and C#/.NET. Explore my projects and experience.",
   keywords: [
@@ -36,7 +39,7 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL("https://monicatoepfer.dk"),
   openGraph: {
-    title: "Monica Frank | Developer",
+    title: "Monica Frank | Full-Stack Developer Portfolio",
     description:
       "Newly graduated full-stack developer with experience in React, Next.js, TypeScript, and C#/.NET. Explore my projects and experience.",
     url: "https://monicatoepfer.dk",
@@ -44,14 +47,16 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/portfolio.png",
-        alt: "Monica Frank Portfolio",
+        width: 1200,
+        height: 630,
+        alt: "Monica Frank - Full-Stack Developer Portfolio",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Monica Frank | Developer",
+    title: "Monica Frank | Full-Stack Developer Portfolio",
     description:
       "Newly graduated full-stack developer with experience in React, Next.js, TypeScript, and C#/.NET. Explore my projects and experience.",
     images: ["/portfolio.png"],
