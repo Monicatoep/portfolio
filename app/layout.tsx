@@ -15,8 +15,47 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio",
-  description: "My personal portfolio",
+  title: "Monica Frank | Developer",
+  description:
+    "Newly graduated full-stack developer with experience in React, Next.js, TypeScript, and C#/.NET. Explore my projects and experience.",
+  keywords: [
+    "Monica Frank",
+    "developer",
+    "full-stack developer",
+    "frontend developer",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "C#",
+    ".NET",
+    "Tailwind CSS",
+    "portfolio",
+  ],
+  alternates: {
+    canonical: "https://monicatoepfer.dk",
+  },
+  metadataBase: new URL("https://monicatoepfer.dk"),
+  openGraph: {
+    title: "Monica Frank | Developer",
+    description:
+      "Newly graduated full-stack developer with experience in React, Next.js, TypeScript, and C#/.NET. Explore my projects and experience.",
+    url: "https://monicatoepfer.dk",
+    siteName: "Monica Frank Portfolio",
+    images: [
+      {
+        url: "/portfolio.png",
+        alt: "Monica Frank Portfolio",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Monica Frank | Developer",
+    description:
+      "Newly graduated full-stack developer with experience in React, Next.js, TypeScript, and C#/.NET. Explore my projects and experience.",
+    images: ["/portfolio.png"],
+  },
 };
 
 export default function RootLayout({
