@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     siteName: "Monica Frank Portfolio",
     images: [
       {
-        url: "/portfolio.png",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Monica Frank - Full-Stack Developer Portfolio",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     title: "Monica Frank | Full-Stack Developer Portfolio",
     description:
       "Newly graduated full-stack developer with experience in React, Next.js, TypeScript, and C#/.NET. Explore my projects and experience.",
-    images: ["/portfolio.png"],
+    images: ["/og-image.png"],
   },
 };
 
@@ -73,7 +73,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col pt-14">
+      <body className="min-h-full flex flex-col pt-20">
         <Topbar />
         <Sidebar />
         {children}

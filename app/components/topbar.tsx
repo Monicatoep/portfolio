@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 
 const navItems = [
   { label: "About", href: "#about" },
@@ -13,6 +12,7 @@ export default function Topbar() {
   const [visible, setVisible] = useState(true);
   const [scrolled, setScrolled] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
     function handleScroll() {
@@ -20,6 +20,20 @@ export default function Topbar() {
       setVisible(currentScrollY < lastScrollY || currentScrollY < 10);
       setScrolled(currentScrollY > 10);
       setLastScrollY(currentScrollY);
+
+      const sections = navItems.map(({ href }) =>
+        document.querySelector(href)
+      );
+      let current = "";
+      for (const section of sections) {
+        if (section) {
+          const top = section.getBoundingClientRect().top;
+          if (top <= 80) {
+            current = `#${section.id}`;
+          }
+        }
+      }
+      setActiveSection(current);
     }
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -32,7 +46,7 @@ export default function Topbar() {
         visible ? "translate-y-0" : "-translate-y-full"
       } ${scrolled ? "bg-background" : ""}`}
     >
-      <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-6">
+      <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-6">
         <a href="#">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/logo.svg" alt="MF logo" width={100} height={34} />
@@ -42,7 +56,11 @@ export default function Topbar() {
             <li key={href}>
               <a
                 href={href}
-                className="text-lg font-medium text-dark transition-colors hover:text-accent"
+                className={`text-lg font-medium transition-colors hover:text-foreground ${
+                  activeSection === href
+                    ? "text-foreground"
+                    : "text-dark"
+                }`}
               >
                 {label}
               </a>
