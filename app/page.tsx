@@ -36,10 +36,10 @@ export default function Home() {
         </div>
       </ParallaxHero>
 
-      <main className="mx-auto w-full max-w-6xl px-6 py-16">
-        {/* About */}
-        <AnimateOnScroll>
-          <section id="about" className="scroll-mt-16">
+      {/* About */}
+      <section id="about" className="scroll-mt-16 bg-[#767860] py-16">
+        <div className="mx-auto w-full max-w-6xl px-6">
+          <AnimateOnScroll>
             <div className="flex items-center gap-4">
               <h1 className="text-3xl font-semibold tracking-tight text-dark">
                 About
@@ -60,82 +60,86 @@ export default function Home() {
                 {"I'm at my best in teams where people share knowledge, review each other's work, and improve continuously. If you think I could be a good fit for your team, I'd love to chat."}
               </p>
             </div>
-          </section>
-        </AnimateOnScroll>
+          </AnimateOnScroll>
+        </div>
+      </section>
 
-        {/* Experience */}
-        <AnimateOnScroll>
-          <section id="experience" className="mt-24 scroll-mt-16">
+      {/* Experience */}
+      <section id="experience" className="scroll-mt-16 py-16">
+        <div className="mx-auto w-full max-w-6xl px-6">
+          <AnimateOnScroll>
             <div className="flex items-center gap-4">
               <h1 className="text-3xl font-semibold tracking-tight text-dark">
                 Experience
               </h1>
               <hr className="flex-1 border-t-2 border-dark" />
             </div>
-          </section>
-        </AnimateOnScroll>
-
-        <div className="mt-10">
-          <AnimateOnScroll>
-            <h2 className="text-xl font-semibold text-foreground">Internships</h2>
           </AnimateOnScroll>
-          <div className="mt-4 flex flex-col gap-6">
-            {internships.map((entry) => (
-              <AnimateOnScroll key={entry.title}>
-                <ExperienceCard entry={entry} />
-              </AnimateOnScroll>
-            ))}
+
+          <div className="mt-10">
+            <AnimateOnScroll>
+              <h2 className="text-xl font-semibold text-foreground">Internships</h2>
+            </AnimateOnScroll>
+            <div className="mt-4 flex flex-col gap-6">
+              {internships.map((entry) => (
+                <AnimateOnScroll key={entry.title}>
+                  <ExperienceCard entry={entry} />
+                </AnimateOnScroll>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-12">
+            <AnimateOnScroll>
+              <h2 className="text-xl font-semibold text-foreground">Work</h2>
+            </AnimateOnScroll>
+            <div className="mt-4 flex flex-col gap-6">
+              {jobs.map((entry) => (
+                <AnimateOnScroll key={entry.title}>
+                  <ExperienceCard entry={entry} />
+                </AnimateOnScroll>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-12">
+            <AnimateOnScroll>
+              <h2 className="text-xl font-semibold text-foreground">Education</h2>
+            </AnimateOnScroll>
+            <div className="mt-4 flex flex-col gap-6">
+              {education.map((entry) => (
+                <AnimateOnScroll key={entry.title}>
+                  <ExperienceCard entry={entry} />
+                </AnimateOnScroll>
+              ))}
+            </div>
           </div>
         </div>
+      </section>
 
-        <div className="mt-12">
+      {/* Projects */}
+      <section id="projects" className="scroll-mt-16 bg-[#767860] py-16">
+        <div className="mx-auto w-full max-w-6xl px-6">
           <AnimateOnScroll>
-            <h2 className="text-xl font-semibold text-foreground">Work</h2>
-          </AnimateOnScroll>
-          <div className="mt-4 flex flex-col gap-6">
-            {jobs.map((entry) => (
-              <AnimateOnScroll key={entry.title}>
-                <ExperienceCard entry={entry} />
-              </AnimateOnScroll>
-            ))}
-          </div>
-        </div>
-
-        <div className="mt-12">
-          <AnimateOnScroll>
-            <h2 className="text-xl font-semibold text-foreground">Education</h2>
-          </AnimateOnScroll>
-          <div className="mt-4 flex flex-col gap-6">
-            {education.map((entry) => (
-              <AnimateOnScroll key={entry.title}>
-                <ExperienceCard entry={entry} />
-              </AnimateOnScroll>
-            ))}
-          </div>
-        </div>
-
-        {/* Projects */}
-        <AnimateOnScroll>
-          <section id="projects" className="mt-24 scroll-mt-16">
             <div className="flex items-center gap-4">
               <h1 className="text-3xl font-semibold tracking-tight text-dark">
                 Projects
               </h1>
               <hr className="flex-1 border-t-2 border-dark" />
             </div>
-          </section>
-        </AnimateOnScroll>
-        <div className="mt-8 flex flex-col gap-8">
-          {projects.map((project, i) => (
-            <AnimateOnScroll key={project.title}>
-              <div>
-                {i > 0 && <hr className="mb-8 border-t border-dark" />}
-                <ProjectCard project={project} reverse={i % 2 === 1} />
-              </div>
-            </AnimateOnScroll>
-          ))}
+          </AnimateOnScroll>
+          <div className="mt-8 flex flex-col gap-8">
+            {projects.map((project, i) => (
+              <AnimateOnScroll key={project.title}>
+                <div>
+                  {i > 0 && <hr className="mb-8 border-t border-dark" />}
+                  <ProjectCard project={project} reverse={i % 2 === 1} />
+                </div>
+              </AnimateOnScroll>
+            ))}
+          </div>
         </div>
-      </main>
+      </section>
     </div>
   );
 }
