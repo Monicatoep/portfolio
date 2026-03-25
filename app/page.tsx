@@ -4,6 +4,7 @@ import { projects } from "./data/projects";
 import ExperienceCard from "./components/experience-card";
 import ProjectCard from "./components/project-card";
 import AnimateOnScroll from "./components/animate-on-scroll";
+import ParallaxHero from "./components/parallax-hero";
 
 export default function Home() {
   const jobs = experience.filter((e) => e.type === "job");
@@ -13,7 +14,7 @@ export default function Home() {
   return (
     <div className="font-sans">
       {/* Hero */}
-      <section className="flex min-h-screen items-center justify-center px-6">
+      <ParallaxHero>
         <div className="flex flex-col items-center gap-12 sm:flex-row sm:items-center">
           <div className="flex flex-col items-center sm:items-start">
             <h1 className="text-5xl font-bold tracking-tight text-foreground sm:text-7xl">
@@ -33,7 +34,7 @@ export default function Home() {
             priority
           />
         </div>
-      </section>
+      </ParallaxHero>
 
       <main className="mx-auto w-full max-w-6xl px-6 py-16">
         {/* About */}
