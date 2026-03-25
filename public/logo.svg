@@ -10,7 +10,7 @@
   <!-- Small right leaf lower -->
   <path d="M60 23 Q66 17 69 13 Q64 18 60 20" fill="#32161F"/>
   <!-- M -->
-  <text x="16" y="32" font-family="Georgia, serif" font-size="26" font-weight="700" fill="#32161F" letter-spacing="-1">M</text>
+  <text x="22" y="32" font-family="Georgia, serif" font-size="26" font-weight="700" fill="#32161F" letter-spacing="-1">M</text>
   <!-- F -->
-  <text x="80" y="32" font-family="Georgia, serif" font-size="26" font-weight="700" fill="#32161F" letter-spacing="-1">F</text>
+  <text x="75" y="32" font-family="Georgia, serif" font-size="26" font-weight="700" fill="#32161F" letter-spacing="-1">F</text>
 </svg>
