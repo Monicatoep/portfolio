@@ -18,6 +18,13 @@
   --font-mono: var(--font-geist-mono);
 }
 
+@keyframes drop {
+  0% { opacity: 0; transform: translateY(0); }
+  10% { opacity: 0.9; }
+  70% { opacity: 0.8; }
+  100% { opacity: 0; transform: translateY(110px); }
+}
+
 html, body {
   background-color: #82846D !important;
   color: #FFFCF2;

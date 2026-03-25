@@ -58,28 +58,44 @@ const GROWTH_STAGES = [
   ),
 ];
 
+const DROPS = [
+  { left: "35%", delay: 0, size: 7 },
+  { left: "42%", delay: 0.06, size: 5 },
+  { left: "50%", delay: 0.12, size: 6 },
+  { left: "46%", delay: 0.1, size: 4 },
+  { left: "58%", delay: 0.15, size: 5 },
+  { left: "54%", delay: 0.04, size: 7 },
+  { left: "40%", delay: 0.18, size: 4 },
+  { left: "62%", delay: 0.08, size: 6 },
+];
+
 function WaterDrops() {
   return (
-    <g className="animate-water-drops">
-      <circle cx="56" cy="52" r="1.5" fill="#FFFCF2" opacity="0.8">
-        <animate attributeName="cy" from="42" to="85" dur="0.6s" fill="freeze" />
-        <animate attributeName="opacity" from="0.8" to="0" dur="0.6s" fill="freeze" />
-      </circle>
-      <circle cx="52" cy="52" r="1" fill="#FFFCF2" opacity="0.7">
-        <animate attributeName="cy" from="45" to="85" dur="0.7s" fill="freeze" />
-        <animate attributeName="opacity" from="0.7" to="0" dur="0.7s" fill="freeze" />
-      </circle>
-      <circle cx="48" cy="52" r="1.5" fill="#FFFCF2" opacity="0.8">
-        <animate attributeName="cy" from="40" to="85" dur="0.5s" fill="freeze" />
-        <animate attributeName="opacity" from="0.8" to="0" dur="0.5s" fill="freeze" />
-      </circle>
-    </g>
+    <div className="pointer-events-none absolute inset-0 z-10">
+      {DROPS.map((drop, i) => (
+        <span
+          key={i}
+          className="absolute animate-[drop_0.8s_ease-in_forwards]"
+          style={{
+            left: drop.left,
+            top: 20,
+            animationDelay: `${drop.delay}s`,
+          }}
+        >
+          {/* Teardrop shape using SVG */}
+          <svg width={drop.size} height={drop.size * 1.5} viewBox="0 0 10 15">
+            <path d="M5 0 Q8 5 8 9 A3 3 0 0 1 2 9 Q2 5 5 0Z" fill="#5b9bd5" opacity="0.85" />
+          </svg>
+        </span>
+      ))}
+    </div>
   );
 }
 
 export default function PlantGame() {
   const [stage, setStage] = useState(0);
   const [watering, setWatering] = useState(false);
+  const [waterCount, setWaterCount] = useState(0);
   const [message, setMessage] = useState("Click the watering can!");
 
   const maxStage = GROWTH_STAGES.length - 1;
@@ -96,6 +112,7 @@ export default function PlantGame() {
   function water() {
     if (watering) return;
     setWatering(true);
+    setWaterCount((c) => c + 1);
 
     if (stage >= maxStage) {
       setMessage("Fully grown! Beautiful!");
@@ -123,17 +140,18 @@ export default function PlantGame() {
   return (
     <div className="flex flex-col items-center gap-3">
       <p className="text-sm text-foreground/60">{message}</p>
-      <svg viewBox="0 0 100 100" className="h-40 w-40">
-        {/* Pot */}
-        <path d="M34 88 L38 98 L62 98 L66 88 Z" fill="#32161F" />
-        <rect x="32" y="85" width="36" height="4" rx="1" fill="#32161F" />
-        {/* Soil */}
-        <ellipse cx="50" cy="88" rx="16" ry="3" fill="#0A210F" opacity="0.5" />
-        {/* Plant */}
-        {GROWTH_STAGES[stage]}
-        {/* Water drops */}
-        {watering && stage < maxStage && <WaterDrops />}
-      </svg>
+      <div className="relative">
+        <svg viewBox="0 0 100 100" className="h-40 w-40">
+          {/* Pot */}
+          <path d="M34 88 L38 98 L62 98 L66 88 Z" fill="#32161F" />
+          <rect x="32" y="85" width="36" height="4" rx="1" fill="#32161F" />
+          {/* Soil */}
+          <ellipse cx="50" cy="88" rx="16" ry="3" fill="#0A210F" opacity="0.5" />
+          {/* Plant */}
+          {GROWTH_STAGES[stage]}
+        </svg>
+        {watering && stage < maxStage && <WaterDrops key={waterCount} />}
+      </div>
       <div className="flex gap-3">
         {stage < maxStage && (
           <button
