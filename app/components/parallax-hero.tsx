@@ -14,7 +14,7 @@ export default function ParallaxHero({ children }: { children: ReactNode }) {
   }, []);
 
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-6">
+    <section className="relative flex min-h-screen items-start justify-center overflow-hidden px-6 pt-24">
       <div
         style={{ transform: `translateY(${offset * 0.35}px)`, opacity: Math.max(1 - offset / 700, 0) }}
         className="transition-none"
