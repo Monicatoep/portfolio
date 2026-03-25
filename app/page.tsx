@@ -3,6 +3,7 @@ import { experience } from "./data/experience";
 import { projects } from "./data/projects";
 import ExperienceCard from "./components/experience-card";
 import ProjectCard from "./components/project-card";
+import PlantGame from "./components/plant-game";
 
 export default function Home() {
   const jobs = experience.filter((e) => e.type === "job");
@@ -112,6 +113,14 @@ export default function Home() {
               </div>
             ))}
           </div>
+        </section>
+
+        {/* Plant Game */}
+        <section className="mt-24 flex flex-col items-center">
+          <p className="mb-4 text-lg font-medium text-foreground/60">
+            {"Thanks for visiting! Grow a plant before you go \uD83C\uDF31"}
+          </p>
+          <PlantGame />
         </section>
       </main>
     </div>
