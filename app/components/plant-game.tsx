@@ -108,7 +108,7 @@ export default function PlantGame() {
       setStage((s) => Math.min(s + 1, maxStage));
       setWatering(false);
       if (stage + 1 >= maxStage) {
-        setMessage("Fully grown! Beautiful!");
+        setMessage("Fully grown!");
       } else {
         setMessage("It grew! Keep watering!");
       }

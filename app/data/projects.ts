@@ -1,12 +1,20 @@
 export interface ProjectEntry {
   title: string;
   description: string;
-  image: string;
+  image?: string;
   technologies: string[];
   link?: string;
+  interactive?: boolean;
 }
 
 export const projects: ProjectEntry[] = [
+  {
+    title: "Plantbook \u2013 Coming Soon",
+    description:
+      "A plant encyclopedia and favorites app that I’m currently building as a learning project. The idea is simple: browse different plants, read about them, and save your favorites in personal lists. Right now, the main purpose of the project is to deepen my understanding of Laravel and PHP by building something from scratch and figuring things out along the way. I’m using it as a hands-on way to explore how a different backend framework works compared to what I’m used to, and to challenge myself outside my usual tech stack. The app itself isn’t meant to be complex. The real value for me is the process of learning, experimenting, and gradually becoming more comfortable and confident with the framework.",
+    technologies: ["PHP", "Laravel", "MySQL", "Tailwind CSS"],
+    interactive: true,
+  },
   {
     title: "Pharmacy Tool - Regnedimsen",
     description:

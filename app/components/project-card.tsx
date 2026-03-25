@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ProjectEntry } from "../data/projects";
 import TechList from "./tech-list";
+import PlantGame from "./plant-game";
 
 export default function ProjectCard({
   project,
@@ -15,15 +16,21 @@ export default function ProjectCard({
         reverse ? "sm:flex-row-reverse" : "sm:flex-row"
       }`}
     >
-      <div className="relative h-80 w-full shrink-0 sm:w-[36rem]">
-        <Image
-          src={project.image}
-          alt={project.title}
-          fill
-          sizes="(max-width: 640px) 100vw, 36rem"
-          className="rounded-lg object-contain"
-        />
-      </div>
+      {project.interactive ? (
+        <div className="flex h-80 w-full shrink-0 items-center justify-center sm:w-[36rem]">
+          <PlantGame />
+        </div>
+      ) : project.image ? (
+        <div className="relative h-80 w-full shrink-0 sm:w-[36rem]">
+          <Image
+            src={project.image}
+            alt={project.title}
+            fill
+            sizes="(max-width: 640px) 100vw, 36rem"
+            className="rounded-lg object-contain"
+          />
+        </div>
+      ) : null}
       <div className="rounded-lg bg-secondary/15 p-6">
         <h3 className="text-lg font-semibold text-foreground">
           {project.title}
