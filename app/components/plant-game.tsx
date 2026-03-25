@@ -135,16 +135,18 @@ export default function PlantGame() {
         {watering && stage < maxStage && <WaterDrops />}
       </svg>
       <div className="flex gap-3">
-        <button
-          onClick={water}
-          className="flex items-center gap-1.5 rounded-full bg-secondary/20 px-4 py-1.5 text-sm font-medium text-foreground transition-colors hover:bg-secondary/40"
-          aria-label="Water the plant"
-        >
-          <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
-            <path d="M12 2C12 2 6 8 6 13a6 6 0 0 0 12 0c0-5-6-10-6-10z" />
-          </svg>
-          Water
-        </button>
+        {stage < maxStage && (
+          <button
+            onClick={water}
+            className="flex items-center gap-1.5 rounded-full bg-secondary/20 px-4 py-1.5 text-sm font-medium text-foreground transition-colors hover:bg-secondary/40"
+            aria-label="Water the plant"
+          >
+            <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
+              <path d="M12 2C12 2 6 8 6 13a6 6 0 0 0 12 0c0-5-6-10-6-10z" />
+            </svg>
+            Water
+          </button>
+        )}
         {stage > 0 && (
           <button
             onClick={reset}
